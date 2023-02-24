@@ -1,0 +1,115 @@
+##### 6 different envs
+env_embedds :
+  "item_embeddings_focused.pt":
+    click_model :
+      "tdPBM":
+        diversity_penalty : 1.0
+        ranker_dataset : "focused_topdown"
+        MF_checkpoint : "focused_topdown"
+      "mixPBM":
+        diversity_penalty :
+          1.0:
+            ranker_dataset : "focused_mix"
+            MF_checkpoint : "focused_mix"
+          3.0:
+            ranker_dataset : "focused_divpen"
+            MF_checkpoint : "focused_divpen"
+  "item_embeddings_diffuse.pt":
+    click_model :
+      "tdPBM":
+        diversity_penalty : 1.0
+        ranker_dataset : "diffuse_topdown"
+        MF_checkpoint : "diffuse_topdown"
+      "mixPBM":
+        diversity_penalty :
+          1.0:
+            ranker_dataset : "diffuse_mix"
+            MF_checkpoint : "diffuse_mix"
+          3.0:
+            ranker_dataset : "diffuse_divpen"
+            MF_checkpoint : "diffuse_divpen"
+            
+
+#### Common to all envs
+agent : "SAC"
+beliefs : [["actor", "critic"]]
+item_embedds : "scratch"
+
+env_name: "topics"
+device: "cuda"
+
+seed:
+  23437561:
+    ranker_seed : 23437561
+  51941177:
+    ranker_seed : 51941177
+  58407201:
+    ranker_seed : 58407201
+  496912423:
+    ranker_seed : 496912423
+  2465781:
+    ranker_seed : 2465781
+  300029:
+    ranker_seed : 300029
+  215567:
+    ranker_seed : 215567
+  309081907:
+    ranker_seed : 309081907
+  548260111:
+    ranker_seed : 548260111
+  212407167:
+    ranker_seed : 212407167
+max_steps: 100000
+check_val_every_n_epoch : 1000
+val_step_length : 200
+test_size : 500
+
+### Ranker
+latent_dim : 32
+ranker : "GeMS"
+belief : "GRU"
+name : "SAC+GeMS"
+lambda_click : 0.5
+lambda_KL : 1.0
+lambda_prior : 0.0
+ranker_embedds : "scratch"
+ranker_sample : "False"
+
+# ReplayBuffer
+capacity : 10000
+batch_size : 20
+
+### QNet
+q_lr: 0.001
+hidden_layers_qnet: [["256"]]
+
+target_update_frequency: 1
+tau : 0.002
+
+### Policy Net
+pi_lr: 0.003
+hidden_layers_pinet: [["256"]]
+
+### RL
+gamma : 0.8
+auto_entropy : "True"
+alpha : 0.2
+random_steps : 2000
+
+### Belief Encoder
+belief_state_dim : 20
+item_embedd_dim : 20
+
+### Env
+num_items : 1000
+boredom_threshold : 5
+recent_items_maxlen : 10
+boredom_moving_window : 5
+env_omega : 0.9
+short_term_boost : 1.0
+episode_length : 100
+env_offset : 0.28
+env_slope : 100
+diversity_threshold : 4
+topic_size : 2
+num_topics : 10

@@ -1,0 +1,15 @@
+MF_dataset : [
+"focused_topdown.pt",
+"diffuse_topdown.pt",
+"focused_mix.pt",
+"diffuse_mix.pt",
+"focused_divpen.pt",
+"diffuse_divpen.pt"
+]
+
+train_val_split_MF : 0.1
+batch_size_MF : 256
+lr_MF : 0.0001
+num_neg_sample_MF : 1
+weight_decay_MF : 0.0
+patience_MF : 3

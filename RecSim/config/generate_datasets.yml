@@ -1,0 +1,41 @@
+n_sess : 100000
+epsilon_pol : 0.5
+env_name : "TopicRec"
+
+### TopicRec parameters
+num_items : 1000
+boredom_threshold : 5
+recent_items_maxlen : 10
+boredom_moving_window : 5
+short_term_boost : 1.0
+episode_length : 100
+topic_size : 2
+num_topics : 10
+env_offset : 0.28
+env_slope : 100
+env_omega : 0.9
+diversity_threshold : 4
+seed : 2754851
+
+
+path :
+  "data/RecSim/datasets/focused_topdown":
+    env_embedds : "item_embeddings_focused.pt"
+    click_model : "tdPBM"
+  "data/RecSim/datasets/diffuse_topdown":
+    env_embedds : "item_embeddings_diffuse.pt"
+    click_model : "tdPBM"
+  "data/RecSim/datasets/focused_mix":
+    env_embedds : "item_embeddings_focused.pt"
+    click_model : "mixPBM"
+  "data/RecSim/datasets/diffuse_mix":
+    env_embedds : "item_embeddings_diffuse.pt"
+    click_model : "mixPBM"
+  "data/RecSim/datasets/focused_divpen":
+    env_embedds : "item_embeddings_focused.pt"
+    click_model : "mixPBM"
+    diversity_penalty : 3.0
+  "data/RecSim/datasets/diffuse_divpen":
+    env_embedds : "item_embeddings_diffuse.pt"
+    click_model : "mixPBM"
+    diversity_penalty : 3.0

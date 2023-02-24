@@ -1,0 +1,20 @@
+ranker : "GeMS"
+max_epochs : 15
+dataset : [
+"data/RecSim/datasets/focused_topdown.pt",
+"data/RecSim/datasets/diffuse_topdown.pt",
+"data/RecSim/datasets/focused_mix.pt",
+"data/RecSim/datasets/diffuse_mix.pt",
+"data/RecSim/datasets/focused_divpen.pt",
+"data/RecSim/datasets/diffuse_divpen.pt"
+]
+
+seed : [58407201, 496912423, 2465781, 300029, 215567, 23437561, 309081907, 548260111, 51941177, 212407167]
+item_embedds : ["scratch"]
+lambda_click : 0.5
+lambda_KL : 1.0
+lambda_prior : 0.0
+latent_dim : 32
+device : "cuda"
+batch_size : 256
+ranker_lr : 0.001
