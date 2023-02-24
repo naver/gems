@@ -15,6 +15,24 @@ While previous work has proposed well-chosen decompositions of actions so as to 
 If you find this code useful, please consider citing us:
 
 Deffayet, R., Thonet, T., Renders, J.-M., & De Rijke, M. (2022). **Generative Slate Recommendation with Reinforcement Learning**.
+```
+@inproceedings{GeMS,
+	author = {Deffayet, Romain and Thonet, Thibaut and Renders, Jean-Michel and de Rijke, Maarten},
+	title = {Generative Slate Recommendation with Reinforcement Learning},
+	year = {2023},
+	isbn = {9781450394079},
+	publisher = {Association for Computing Machinery},
+	address = {New York, NY, USA},
+	url = {https://doi.org/10.1145/3539597.3570412},
+	doi = {10.1145/3539597.3570412},
+	booktitle = {Proceedings of the Sixteenth ACM International Conference on Web Search and Data Mining},
+	pages = {580–588},
+	numpages = {9},
+	keywords = {slate recommendation, reinforcement learning, variational auto-encoder},
+	location = {Singapore, Singapore},
+	series = {WSDM '23}
+}
+```
 
 ## __Content of the repository__
 
